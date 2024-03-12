@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/template",
+  "author": "Prohelika",
+  "classifications": [
+    "Solution"
+  ],
+  "identity": "Prohelika.Solution.Template",
+  "groupIdentity": "Prohelika.Solution.Template",
+  "shortName": "prosol",
+  "name": "Prohelika.Solution.Template",
+  "description": "Solution template for .NET",
+  "preferNameDirectory": true,
+  "precedence": 1,
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "Prohelika",
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [ ".vs/**", ".idea/**", ".git/**", ".DS_Store" ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+@Prohelika.API_HostAddress = http://localhost:5235
+
+GET {{Prohelika.API_HostAddress}}/Test/
+Accept: application/json
+
+###

@@ -1,0 +1,31 @@
+﻿volumes:
+  prohelika.db.data:
+    driver: local
+  
+  prohelika.files:
+    driver: local
+
+services:
+  prohelika.db:
+    image: postgres:16.1-alpine
+    environment:
+      POSTGRES_USER: "db.user"
+      POSTGRES_PASSWORD: "db.password"
+      POSTGRES_DB: "db.name"
+    ports:
+      - "5432:5432"
+    volumes:
+      - prohelika.db.data:/var/lib/postgresql/data
+    restart: unless-stopped
+  
+  prohelika.api:
+    image: prohelika.api:latest
+    build:
+      context: ..
+      dockerfile: src/Prohelika.API/Dockerfile
+    ports:
+      - "8001:8080"
+    depends_on:
+      - prohelika.db
+    restart: unless-stopped
+
